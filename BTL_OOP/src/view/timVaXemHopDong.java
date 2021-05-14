@@ -79,7 +79,7 @@ public class timVaXemHopDong {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(65, 105, 225));
-		frame.setBounds(100, 100, 1075, 498);
+		frame.setBounds(100, 100, 1084, 498);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -90,6 +90,8 @@ public class timVaXemHopDong {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnTimKiemLoaiXe = new JButton("T\u00ECm ki\u1EBFm theo lo\u1EA1i xe");
+		btnTimKiemLoaiXe.setBackground(new Color(255, 140, 0));
+		btnTimKiemLoaiXe.setForeground(new Color(255, 255, 255));
 		
 		btnTimKiemLoaiXe.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnTimKiemLoaiXe.setBounds(29, 311, 294, 33);
@@ -125,12 +127,16 @@ public class timVaXemHopDong {
 		textTruyVanHopDong.setColumns(10);
 		
 		JButton btnTimKiemTheoTen = new JButton("T\u00ECm theo t\u00EAn ng\u01B0\u1EDDi thu\u00EA");
+		btnTimKiemTheoTen.setBackground(new Color(255, 140, 0));
+		btnTimKiemTheoTen.setForeground(new Color(255, 255, 255));
 		
 		btnTimKiemTheoTen.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnTimKiemTheoTen.setBounds(29, 118, 294, 39);
 		frame.getContentPane().add(btnTimKiemTheoTen);
 		
 		JButton btnTimKiemTheoBienXe = new JButton("T\u00ECm theo bi\u1EC3n xe");
+		btnTimKiemTheoBienXe.setBackground(new Color(255, 140, 0));
+		btnTimKiemTheoBienXe.setForeground(new Color(255, 255, 255));
 		
 		btnTimKiemTheoBienXe.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnTimKiemTheoBienXe.setBounds(29, 168, 294, 39);
@@ -149,12 +155,16 @@ public class timVaXemHopDong {
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JButton btnTimKiemTheoGia = new JButton("T\u00ECm ki\u1EBFm theo gi\u00E1");
+		btnTimKiemTheoGia.setBackground(new Color(255, 140, 0));
+		btnTimKiemTheoGia.setForeground(new Color(255, 255, 255));
 		
 		btnTimKiemTheoGia.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnTimKiemTheoGia.setBounds(29, 218, 294, 39);
 		frame.getContentPane().add(btnTimKiemTheoGia);
 		
 		JButton btnThoat = new JButton("Tho\u00E1t");
+		btnThoat.setBackground(new Color(255, 0, 0));
+		btnThoat.setForeground(new Color(255, 255, 255));
 		btnThoat.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -167,6 +177,8 @@ public class timVaXemHopDong {
 		frame.getContentPane().add(btnThoat);
 		
 		JButton btnXemHopDong = new JButton("Xem tất cả hợp đồng");
+		btnXemHopDong.setBackground(new Color(255, 140, 0));
+		btnXemHopDong.setForeground(new Color(255, 255, 255));
 		
 		btnXemHopDong.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnXemHopDong.setBounds(29, 363, 294, 33);

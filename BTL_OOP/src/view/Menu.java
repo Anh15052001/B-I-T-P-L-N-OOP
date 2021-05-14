@@ -73,6 +73,8 @@ public class Menu {
 		
 		
 		JButton btnThemHopDong = new JButton("Th\u00EAm h\u1EE3p \u0111\u1ED3ng");
+		btnThemHopDong.setBackground(new Color(0, 0, 255));
+		btnThemHopDong.setForeground(new Color(255, 255, 255));
 		btnThemHopDong.addMouseListener(new MouseAdapter() {
 			@Override
 			// nút để thêm hợp đồng
@@ -86,6 +88,8 @@ public class Menu {
 		frame.getContentPane().add(btnThemHopDong);
 		
 		JButton btnSuaHopDong = new JButton("S\u1EEDa, x\u00F3a h\u1EE3p \u0111\u1ED3ng");
+		btnSuaHopDong.setForeground(new Color(255, 255, 255));
+		btnSuaHopDong.setBackground(new Color(0, 0, 255));
 		btnSuaHopDong.addMouseListener(new MouseAdapter() {
 			@Override
 			// nút để sửa và xóa 1 hợp đồng
@@ -98,6 +102,8 @@ public class Menu {
 		btnSuaHopDong.setBounds(40, 188, 211, 49);
 		frame.getContentPane().add(btnSuaHopDong);
 		JButton btnTimKiemHopDong = new JButton("T\u00ECm v\u00E0 xem h\u1EE3p \u0111\u1ED3ng");
+		btnTimKiemHopDong.setForeground(new Color(255, 255, 255));
+		btnTimKiemHopDong.setBackground(new Color(0, 0, 255));
 		btnTimKiemHopDong.addMouseListener(new MouseAdapter() {
 			@Override
 			// nút để tìm kiếm và xem hợp đồng
@@ -111,6 +117,8 @@ public class Menu {
 		frame.getContentPane().add(btnTimKiemHopDong);
 		
 		JButton btnChiPhi = new JButton("Chi ph\u00ED b\u00E3i xe");
+		btnChiPhi.setForeground(new Color(255, 255, 255));
+		btnChiPhi.setBackground(new Color(0, 0, 255));
 		btnChiPhi.addMouseListener(new MouseAdapter() {
 			@Override
 			// nút xem chi phí trong 1 khoảng thời gian đã nhập
@@ -123,6 +131,8 @@ public class Menu {
 		frame.getContentPane().add(btnChiPhi);
 		
 		JButton btnThoat = new JButton("Tho\u00E1t");
+		btnThoat.setForeground(new Color(255, 255, 255));
+		btnThoat.setBackground(new Color(255, 0, 0));
 		btnThoat.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

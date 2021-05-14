@@ -72,6 +72,8 @@ public class xemChiPhi {
 		textBatDau.setColumns(10);
 		
 		JButton btnXemChiPhi = new JButton("Xem chi ph\u00ED");
+		btnXemChiPhi.setBackground(new Color(0, 255, 0));
+		btnXemChiPhi.setForeground(new Color(255, 255, 255));
 		btnXemChiPhi.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

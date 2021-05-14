@@ -118,6 +118,8 @@ public class sua_xoaHopDong {
 		panelThongTinHopDong.add(lblLoaiXe);
 
 		JButton btnTimKiemHopDong = new JButton("T\u00ECm ki\u1EBFm");
+		btnTimKiemHopDong.setForeground(new Color(255, 255, 255));
+		btnTimKiemHopDong.setBackground(new Color(255, 165, 0));
 		btnTimKiemHopDong.addMouseListener(new MouseAdapter() {
 			// tìm kiếm hợp đồng theo truy vấn đã nhập
 			@Override
@@ -201,26 +203,31 @@ public class sua_xoaHopDong {
 		panelThongTinHopDong.setLayout(null);
 
 		JLabel lblNewLabel_2_1 = new JLabel("Tên người thuê");
+		lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_2_1.setBounds(44, 84, 135, 33);
 		panelThongTinHopDong.add(lblNewLabel_2_1);
 
 		JLabel lblNewLabel_2_2 = new JLabel("Căn cước công dân");
+		lblNewLabel_2_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_2_2.setBounds(44, 128, 152, 30);
 		panelThongTinHopDong.add(lblNewLabel_2_2);
 
 		JLabel lblNewLabel_2_3 = new JLabel("Loại xe\r\n thuê");
+		lblNewLabel_2_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_2_3.setBounds(44, 169, 135, 26);
 		panelThongTinHopDong.add(lblNewLabel_2_3);
 
 		JLabel lblNewLabel_2_4 = new JLabel("Tên người cho thuê");
+		lblNewLabel_2_4.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_2_4.setBounds(44, 216, 163, 31);
 		panelThongTinHopDong.add(lblNewLabel_2_4);
 
 		JLabel lblNewLabel_2_5 = new JLabel("Số ngày/ tháng thuê");
+		lblNewLabel_2_5.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2_5.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_2_5.setBounds(44, 258, 152, 33);
 		panelThongTinHopDong.add(lblNewLabel_2_5);
@@ -250,6 +257,8 @@ public class sua_xoaHopDong {
 		panelThongTinHopDong.add(textThoiGian);
 
 		JButton btnSuaHopDong = new JButton("Sửa hợp đồng");
+		btnSuaHopDong.setForeground(new Color(255, 255, 255));
+		btnSuaHopDong.setBackground(new Color(0, 255, 0));
 		btnSuaHopDong.addMouseListener(new MouseAdapter() {
 			@Override
 			// nút để sửa hợp đồng đã được tìm kiếm
@@ -340,7 +349,7 @@ public class sua_xoaHopDong {
 			}
 		});
 		btnSuaHopDong.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnSuaHopDong.setBounds(44, 319, 143, 33);
+		btnSuaHopDong.setBounds(44, 319, 163, 33);
 		panelThongTinHopDong.add(btnSuaHopDong);
 		
 		JLabel lblNewLabel_2 = new JLabel("Thông tin");
@@ -351,6 +360,7 @@ public class sua_xoaHopDong {
 		panelThongTinHopDong.add(lblNewLabel_2);
 		
 		JButton btnXoaHopDong = new JButton("Xóa hợp đồng");
+		btnXoaHopDong.setBackground(new Color(255, 0, 0));
 		btnXoaHopDong.addMouseListener(new MouseAdapter() {
 			@Override
 			// nút dùng để xóa hợp đồng
@@ -397,10 +407,12 @@ public class sua_xoaHopDong {
 			}
 		});
 		btnXoaHopDong.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnXoaHopDong.setBounds(234, 319, 143, 33);
+		btnXoaHopDong.setBounds(217, 319, 160, 33);
 		panelThongTinHopDong.add(btnXoaHopDong);
 		
 		JButton btnNewButton = new JButton("Thoát");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(255, 0, 0));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

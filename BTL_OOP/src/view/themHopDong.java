@@ -184,6 +184,8 @@ public class themHopDong {
 		
 		
 		btnThemHopDong = new JButton("Th\u00EAm h\u1EE3p \u0111\u1ED3ng");
+		btnThemHopDong.setBackground(new Color(0, 255, 0));
+		btnThemHopDong.setForeground(new Color(255, 255, 255));
 		btnThemHopDong.addMouseListener(new MouseAdapter() {
 			// nút để thêm hợp đồng vào danh sách
 			@Override

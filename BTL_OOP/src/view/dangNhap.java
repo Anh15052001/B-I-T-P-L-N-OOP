@@ -85,6 +85,8 @@ public class dangNhap {
 		textMatKhau.setColumns(10);
 		
 		JButton btnDangNhap = new JButton("\u0110\u0103ng nh\u1EADp");
+		btnDangNhap.setForeground(new Color(255, 255, 255));
+		btnDangNhap.setBackground(new Color(0, 255, 0));
 		btnDangNhap.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
