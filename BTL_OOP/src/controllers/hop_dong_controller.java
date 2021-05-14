@@ -2,6 +2,7 @@ package controllers;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,32 +12,47 @@ import models.*;
  *
  */
 public class hop_dong_controller {
-	public List<xe_thue_theo_ngay>  hop_dong_theo_ngay;
-	public List<xe_thue_theo_thang>  hop_dong_theo_thang;
+	public static List<xe_thue_theo_ngay>  hop_dong_theo_ngay = new ArrayList<>();
+	public static List<xe_thue_theo_thang>  hop_dong_theo_thang = new ArrayList<>();
 	// add a hop_dong
-	public void themHopDong(int ma_thue_xe, String Mahopdong, String Tennguoithue, long Cancuoccongdan, xe Loaixethue, String Trangthai, String nguoichothue) {
+	public void themHopDong(int ma_thue_xe, String Mahopdong, String Tennguoithue, String Cancuoccongdan, xe Loaixethue, String Trangthai, String nguoichothue,String thoiGian) {
 		Date date = new Date(System.currentTimeMillis());
-		DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss"); 
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy"); 
 		String dateString  = df.format(date);
 		if( ma_thue_xe == configs.MA_THUE_XE_THEO_NGAY ) {
-	    	int Songaythue = 0;
-	    	xe_thue_theo_ngay hop_dong_ngay = new xe_thue_theo_ngay(Mahopdong,  Tennguoithue,  Cancuoccongdan,  Loaixethue,  Trangthai, nguoichothue , Songaythue);
-	    	hop_dong_ngay.setGiaThue(hop_dong_ngay.getSongaythue() * configs.GIA_THUE_TRONG_1_NGAY);
-	    	hop_dong_ngay.setNgayThue("dateString");
+	    	
+	    	xe_thue_theo_ngay hop_dong_ngay = new xe_thue_theo_ngay(Mahopdong,  Tennguoithue,  Cancuoccongdan,  Loaixethue,  Trangthai, nguoichothue , thoiGian);
+	    	int t=0;
+	    	try {
+	    		t = Integer.valueOf(hop_dong_ngay.getSongaythue());
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Error into time!");
+			}
+	    	hop_dong_ngay.setGiaThue(t * configs.GIA_THUE_TRONG_1_NGAY);
+	    	hop_dong_ngay.setNgayThue(dateString);
+//	    	System.out.println("Thoi Gian " + hop_dong_ngay.getNgayThue());
 	    	hop_dong_ngay.setTrangthai("1");
 	    	hop_dong_theo_ngay.add(hop_dong_ngay);
 	    }
 	    else if(ma_thue_xe == configs.MA_THUE_XE_THEO_THANG) {
-	    	int Sothangthue = 0;
-	    	xe_thue_theo_thang hop_dong_thang = new xe_thue_theo_thang(Mahopdong,  Tennguoithue,  Cancuoccongdan,  Loaixethue,  Trangthai, nguoichothue , Sothangthue);
-	    	hop_dong_thang.setGiaThue(hop_dong_thang.getSothangthue() * configs.GIA_THUE_TRONG_1_THANG);
+	    
+	    	xe_thue_theo_thang hop_dong_thang = new xe_thue_theo_thang(Mahopdong,  Tennguoithue,  Cancuoccongdan,  Loaixethue,  Trangthai, nguoichothue , thoiGian);
+	    	int t=0;
+	    	try {
+	    		t = Integer.valueOf(hop_dong_thang.getSothangthue());
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("Error into time!");
+			}
+	    	hop_dong_thang.setGiaThue(t * configs.GIA_THUE_TRONG_1_THANG);
 	    	hop_dong_thang.setNgayThue("dateString");
 	    	hop_dong_thang.setTrangthai("1");
 	    	hop_dong_theo_thang.add(hop_dong_thang);
 	    }
 	}
 	// edit a hop_dong
-	public void suaHopDong(int ma_thue_xe, int index, String Mahopdong, String Tennguoithue, long Cancuoccongdan, xe Loaixethue, String Trangthai, String nguoichothue, int Thoigian) {
+	public void suaHopDong(int ma_thue_xe, int index, String Mahopdong, String Tennguoithue, String Cancuoccongdan, xe Loaixethue, String Trangthai, String nguoichothue, String Thoigian) {
 		if( ma_thue_xe == configs.MA_THUE_XE_THEO_NGAY ) {
 			xe_thue_theo_ngay hop_dong = hop_dong_theo_ngay.get(index);
 			hop_dong.setMahopdong(Mahopdong);
@@ -46,7 +62,7 @@ public class hop_dong_controller {
 			hop_dong.setTrangthai(Trangthai);
 			hop_dong.setNguoichothue(nguoichothue);
 			hop_dong.setSongaythue(Thoigian);
-			hop_dong.setGiaThue(hop_dong.getSongaythue() * configs.GIA_THUE_TRONG_1_NGAY);
+			hop_dong.setGiaThue(Integer.valueOf(hop_dong.getSongaythue()) * configs.GIA_THUE_TRONG_1_NGAY);
 		}
 	    else if(ma_thue_xe == configs.MA_THUE_XE_THEO_THANG) {
 	    	xe_thue_theo_thang hop_dong = hop_dong_theo_thang.get(index);
@@ -57,7 +73,7 @@ public class hop_dong_controller {
 			hop_dong.setTrangthai(Trangthai);
 			hop_dong.setNguoichothue(nguoichothue);
 			hop_dong.setSothangthue(Thoigian);
-			hop_dong.setGiaThue(hop_dong.getSothangthue() * configs.GIA_THUE_TRONG_1_THANG);
+			hop_dong.setGiaThue(Integer.valueOf(hop_dong.getSothangthue()) * configs.GIA_THUE_TRONG_1_THANG);
 	    }
 	}
     // delete a hop_dong
@@ -73,34 +89,36 @@ public class hop_dong_controller {
 	}
 	// find a hop_dong
 	public List<xe_thue_theo_thang> timKiemHopDongThangTheoTen(String tenChuXe) {
-		List<xe_thue_theo_thang> temp = null;
+		List<xe_thue_theo_thang> temp = new ArrayList<>();
 		for( xe_thue_theo_thang i : hop_dong_theo_thang ) 
-			if( i.getTennguoithue() == tenChuXe  ) {
+			if( i.getTennguoithue().equals(tenChuXe)  ) {
 				temp.add(i);
 		}
 		return temp;		
 	}
 	public List<xe_thue_theo_thang> timKiemHopDongThangTheoBienXe(String bienSoXe)  {
-		List<xe_thue_theo_thang> temp = null;
+		List<xe_thue_theo_thang> temp = new ArrayList<>();
 		for( xe_thue_theo_thang i : hop_dong_theo_thang ) {
-			if(i.getLoaixethue().getBiensoxe() == bienSoXe ) {
+			if(i.getLoaixethue().getBiensoxe().equals(bienSoXe) ) {
 				temp.add(i);
 			}
 		}
 		return temp;
 	}
 	public List<xe_thue_theo_ngay> timKiemHopDongNgayTheoTen(String tenChuXe) {
-		List<xe_thue_theo_ngay> temp = null;
-		for( xe_thue_theo_ngay i : hop_dong_theo_ngay ) 
-			if( i.getTennguoithue() == tenChuXe  ) {
-				temp.add(i);
+		List<xe_thue_theo_ngay> temp = new ArrayList<>();
+		for( xe_thue_theo_ngay i : hop_dong_theo_ngay ) {
+				if( i.getTennguoithue().equals(tenChuXe)  ) {
+					temp.add(i);
+		}
+			
 		}
 		return temp;		
 	}
 	public List<xe_thue_theo_ngay> timKiemHopDongNgayTheoBienXe(String bienSoXe)  {
-		List<xe_thue_theo_ngay> temp = null;
+		List<xe_thue_theo_ngay> temp = new ArrayList<>();
 		for( xe_thue_theo_ngay i : hop_dong_theo_ngay ) {
-			if(i.getLoaixethue().getBiensoxe() == bienSoXe ) {
+			if(i.getLoaixethue().getBiensoxe().equals(bienSoXe) ) {
 				temp.add(i);
 			}
 		}
@@ -109,7 +127,7 @@ public class hop_dong_controller {
 	
 	// find a hop_dong theo gia
 	public List<xe_thue_theo_ngay> timKiemHopDongNgayTheoGia(long x) {
-		List<xe_thue_theo_ngay> temp = null;
+		List<xe_thue_theo_ngay> temp = new ArrayList<>();
 		for( xe_thue_theo_ngay i : hop_dong_theo_ngay ) {
 			if( i.getGiaThue() > x) {
 				temp.add(i);
@@ -118,7 +136,7 @@ public class hop_dong_controller {
 		return temp;
 	}
 	public List<xe_thue_theo_thang> timKiemHopDongThangTheoGia(long x) {
-		List<xe_thue_theo_thang> temp = null;
+		List<xe_thue_theo_thang> temp = new ArrayList<>();
 		for( xe_thue_theo_thang i : hop_dong_theo_thang ) {
 			if( i.getGiaThue() > x) {
 				temp.add(i);
@@ -128,19 +146,22 @@ public class hop_dong_controller {
 	}
 	
 	// find a hop_dong theo time
-	public List<xe_thue_theo_ngay> timKiemHopDongNgayTheoThoiGian(String s) {
-		List<xe_thue_theo_ngay> temp = null;
+	public List<xe_thue_theo_ngay> timKiemHopDongNgayTheoLoaiXe(int index) {
+		List<xe_thue_theo_ngay> temp = new ArrayList<>();
 		for( xe_thue_theo_ngay i : hop_dong_theo_ngay ) {
-			if( i.getNgayThue().compareTo(s) >0) {
+			
+			if( i.getLoaixethue().equals(view.themHopDong.data.get(index)) == true) {
+				
 				temp.add(i);
 			}
 		}
 		return temp;
 	}
-	public List<xe_thue_theo_thang> timKiemHopDongThangTheoThoiGian(String s) {
-		List<xe_thue_theo_thang> temp = null;
+	public List<xe_thue_theo_thang> timKiemHopDongThangTheoLoaiXe(int index) {
+		List<xe_thue_theo_thang> temp = new ArrayList<>();
 		for( xe_thue_theo_thang i : hop_dong_theo_thang ) {
-			if(i.getNgayThue().compareTo(s) >0) {
+			if( i.getLoaixethue().equals(view.themHopDong.data.get(index)) == true) {
+				
 				temp.add(i);
 			}
 		}
@@ -159,5 +180,7 @@ public class hop_dong_controller {
 		}
 		return chiPhi;
 	}
-
+	
+	
+		
 }

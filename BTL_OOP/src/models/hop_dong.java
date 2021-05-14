@@ -4,7 +4,7 @@ public abstract class hop_dong{
     //các thuộc tính của lớp hợp đồng
     private String Mahopdong;
     private String Tennguoithue;
-    private long Cancuoccongdan;
+    private String Cancuoccongdan;
     private xe Loaixethue;
     private String Trangthai;
     private String nguoichothue;
@@ -18,7 +18,7 @@ public abstract class hop_dong{
 	}
 	//hàm khởi tạo cho hợp đồng
     public hop_dong(){}
-    public hop_dong(String Mahopdong, String Tennguoithue, long Cancuoccongdan, xe Loaixethue, String Trangthai, String nguoichothue)
+    public hop_dong(String Mahopdong, String Tennguoithue, String Cancuoccongdan, xe Loaixethue, String Trangthai, String nguoichothue)
     {
         this.Mahopdong=Mahopdong;
         this.Tennguoithue=Tennguoithue;
@@ -56,13 +56,13 @@ public abstract class hop_dong{
 	/**
 	 * @return the cancuoccongdan
 	 */
-	public long getCancuoccongdan() {
+	public String getCancuoccongdan() {
 		return Cancuoccongdan;
 	}
 	/**
 	 * @param cancuoccongdan the cancuoccongdan to set
 	 */
-	public void setCancuoccongdan(long cancuoccongdan) {
+	public void setCancuoccongdan(String cancuoccongdan) {
 		Cancuoccongdan = cancuoccongdan;
 	}
 	/**
