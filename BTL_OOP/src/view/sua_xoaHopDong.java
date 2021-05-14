@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import controllers.hop_dong_controller;
+import java.awt.Color;
 
 public class sua_xoaHopDong {
 
@@ -57,6 +58,7 @@ public class sua_xoaHopDong {
 	public sua_xoaHopDong() {
 		initialize();
 		frame.setVisible(true);
+		panelThongTinHopDong.setBackground(new Color(64, 224, 208));
 		panelThongTinHopDong.setVisible(false);
 	}
 
@@ -73,17 +75,20 @@ public class sua_xoaHopDong {
 	
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(65, 105, 225));
 		frame.setBounds(100, 100, 930, 448);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Tìm hợp đồng theo mã");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel.setBounds(77, 21, 236, 39);
 		frame.getContentPane().add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("M\u00E3 h\u1EE3p \u0111\u1ED3ng");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel_1.setBounds(66, 87, 112, 29);
 		frame.getContentPane().add(lblNewLabel_1);
@@ -339,8 +344,9 @@ public class sua_xoaHopDong {
 		panelThongTinHopDong.add(btnSuaHopDong);
 		
 		JLabel lblNewLabel_2 = new JLabel("Thông tin");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel_2.setBounds(133, 29, 135, 44);
 		panelThongTinHopDong.add(lblNewLabel_2);
 		

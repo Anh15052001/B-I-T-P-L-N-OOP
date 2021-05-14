@@ -25,6 +25,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class themHopDong {
 
@@ -78,7 +79,8 @@ public class themHopDong {
 	private javax.swing.JComboBox<String> comboBoxLoaiXe;
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 543, 489);
+		frame.getContentPane().setBackground(new Color(65, 105, 225));
+		frame.setBounds(100, 100, 499, 489);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -89,13 +91,14 @@ public class themHopDong {
 		textTenNguoiChoThue.setColumns(10);
 
 		JLabel lblNewLabel = new JLabel("T\u00EAn ng\u01B0\u1EDDi thu\u00EA");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel.setBounds(32, 72, 130, 27);
 		frame.getContentPane().add(lblNewLabel);
 
 		lblNewLabel_1 = new JLabel("Th\u00EAm h\u1EE3p \u0111\u1ED3ng");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(125, 19, 165, 40);
+		lblNewLabel_1.setBounds(157, 19, 165, 40);
 		frame.getContentPane().add(lblNewLabel_1);
 
 		textCanCuocCongDan = new JTextField();
@@ -123,26 +126,31 @@ public class themHopDong {
 		frame.getContentPane().add(textThoiGian);
 
 		lblCnCcCng = new JLabel("C\u0103n C\u01B0\u1EDBc C\u00F4ng D\u00E2n");
+		lblCnCcCng.setForeground(new Color(255, 255, 255));
 		lblCnCcCng.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblCnCcCng.setBounds(32, 111, 152, 27);
 		frame.getContentPane().add(lblCnCcCng);
 
 		lblLoiXe = new JLabel("Lo\u1EA1i xe");
+		lblLoiXe.setForeground(new Color(255, 255, 255));
 		lblLoiXe.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblLoiXe.setBounds(32, 152, 130, 27);
 		frame.getContentPane().add(lblLoiXe);
 
 		lblMHpng = new JLabel("M\u00E3 h\u1EE3p \u0111\u1ED3ng");
+		lblMHpng.setForeground(new Color(255, 255, 255));
 		lblMHpng.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblMHpng.setBounds(32, 193, 130, 27);
 		frame.getContentPane().add(lblMHpng);
 
 		lblTnNgiCho = new JLabel("T\u00EAn ng\u01B0\u1EDDi cho thu\u00EA");
+		lblTnNgiCho.setForeground(new Color(255, 255, 255));
 		lblTnNgiCho.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblTnNgiCho.setBounds(32, 234, 152, 27);
 		frame.getContentPane().add(lblTnNgiCho);
 
 		lblSNgyThng = new JLabel("S\u1ED1 ng\u00E0y/ th\u00E1ng thu\u00EA");
+		lblSNgyThng.setForeground(new Color(255, 255, 255));
 		lblSNgyThng.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSNgyThng.setBounds(32, 279, 152, 27);
 		frame.getContentPane().add(lblSNgyThng);
@@ -150,14 +158,14 @@ public class themHopDong {
 		JRadioButton radioTheoNgay = new JRadioButton("Thu\u00EA theo ng\u00E0y");
 		buttonGroup.add(radioTheoNgay);
 		radioTheoNgay.setSelected(true);
-		radioTheoNgay.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		radioTheoNgay.setBounds(37, 326, 174, 40);
+		radioTheoNgay.setFont(new Font("Tahoma", Font.BOLD, 16));
+		radioTheoNgay.setBounds(37, 326, 165, 40);
 		frame.getContentPane().add(radioTheoNgay);
 
 		JRadioButton radioTheoThang = new JRadioButton("Thu\u00EA theo th\u00E1ng");
 		buttonGroup.add(radioTheoThang);
-		radioTheoThang.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		radioTheoThang.setBounds(279, 326, 165, 47);
+		radioTheoThang.setFont(new Font("Tahoma", Font.BOLD, 16));
+		radioTheoThang.setBounds(279, 326, 165, 40);
 		frame.getContentPane().add(radioTheoThang);
 		
 		comboBoxLoaiXe = new JComboBox();
@@ -223,7 +231,7 @@ public class themHopDong {
 
 			}
 		});
-		btnThemHopDong.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnThemHopDong.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnThemHopDong.setBounds(171, 380, 183, 40);
 		frame.getContentPane().add(btnThemHopDong);
 

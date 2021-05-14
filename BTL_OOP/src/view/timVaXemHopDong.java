@@ -78,11 +78,13 @@ public class timVaXemHopDong {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(65, 105, 225));
 		frame.setBounds(100, 100, 1075, 498);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Ch\u1EE9c n\u0103ng t\u00ECm ki\u1EBFm");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel.setBounds(64, 11, 221, 46);
 		frame.getContentPane().add(lblNewLabel);
@@ -94,6 +96,7 @@ public class timVaXemHopDong {
 		frame.getContentPane().add(btnTimKiemLoaiXe);
 		
 		JLabel lblNewLabel_1 = new JLabel("Th\u00F4ng tin h\u1EE3p \u0111\u1ED3ng");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel_1.setBounds(637, 11, 205, 25);
 		frame.getContentPane().add(lblNewLabel_1);
@@ -104,7 +107,7 @@ public class timVaXemHopDong {
 		
 		table = new JTable();
 		table.setForeground(Color.WHITE);
-		table.setBackground(Color.GRAY);
+		table.setBackground(new Color(0, 191, 255));
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		table.removeAll();
 		models = new DefaultTableModel();
@@ -139,6 +142,7 @@ public class timVaXemHopDong {
 		frame.getContentPane().add(comboBoxLoaiXe);
 		
 		JLabel lblNewLabel_2 = new JLabel("Lo\u1EA1i xe");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNewLabel_2.setBounds(29, 268, 86, 32);

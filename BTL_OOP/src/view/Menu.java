@@ -11,6 +11,7 @@ import controllers.hop_dong_controller;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Color;
 
 public class Menu {
 
@@ -45,22 +46,26 @@ public class Menu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(65, 105, 225));
 		frame.setBounds(100, 100, 582, 403);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Ch\u01B0\u01A1ng tr\u00ECnh qu\u1EA3n l\u00FD thu\u00EA xe");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Arial", Font.BOLD, 20));
 		lblNewLabel.setBounds(134, 11, 299, 60);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("H\u1EE3p \u0111\u1ED3ng");
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD, 18));
 		lblNewLabel_1.setBounds(76, 82, 149, 42);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Qu\u1EA3n l\u00FD chung");
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 18));
 		lblNewLabel_2.setBounds(305, 79, 211, 49);
@@ -118,6 +123,12 @@ public class Menu {
 		frame.getContentPane().add(btnChiPhi);
 		
 		JButton btnThoat = new JButton("Tho\u00E1t");
+		btnThoat.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				hiddenMenu();
+			}
+		});
 		btnThoat.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnThoat.setBounds(170, 284, 180, 49);
 		frame.getContentPane().add(btnThoat);
