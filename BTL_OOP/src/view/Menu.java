@@ -70,6 +70,7 @@ public class Menu {
 		JButton btnThemHopDong = new JButton("Th\u00EAm h\u1EE3p \u0111\u1ED3ng");
 		btnThemHopDong.addMouseListener(new MouseAdapter() {
 			@Override
+			// nút để thêm hợp đồng
 			public void mouseClicked(MouseEvent e) {
 				new themHopDong();
 				hiddenMenu();
@@ -82,6 +83,7 @@ public class Menu {
 		JButton btnSuaHopDong = new JButton("S\u1EEDa, x\u00F3a h\u1EE3p \u0111\u1ED3ng");
 		btnSuaHopDong.addMouseListener(new MouseAdapter() {
 			@Override
+			// nút để sửa và xóa 1 hợp đồng
 			public void mouseClicked(MouseEvent e) {
 				new sua_xoaHopDong();
 				hiddenMenu();
@@ -93,6 +95,7 @@ public class Menu {
 		JButton btnTimKiemHopDong = new JButton("T\u00ECm v\u00E0 xem h\u1EE3p \u0111\u1ED3ng");
 		btnTimKiemHopDong.addMouseListener(new MouseAdapter() {
 			@Override
+			// nút để tìm kiếm và xem hợp đồng
 			public void mouseClicked(MouseEvent e) {
 				new timVaXemHopDong();
 				hiddenMenu();
@@ -105,6 +108,7 @@ public class Menu {
 		JButton btnChiPhi = new JButton("Chi ph\u00ED b\u00E3i xe");
 		btnChiPhi.addMouseListener(new MouseAdapter() {
 			@Override
+			// nút xem chi phí trong 1 khoảng thời gian đã nhập
 			public void mouseClicked(MouseEvent e) {
 				new xemChiPhi();
 			}

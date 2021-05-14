@@ -83,7 +83,10 @@ public class dangNhap {
 				String tenDangNhap = textTaiKhoan.getText();
 				String matKhau = textMatKhau.getText();
 				if(tenDangNhap.equals("Admin") == true && matKhau.equals("Admin") == true) {
+					// xét ẩn frame dangNhap
 					frame.setVisible(false);
+
+					// xét hiện menu chính
 					new Menu();
 				}
 				else {

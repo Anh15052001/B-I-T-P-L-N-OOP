@@ -1,10 +1,13 @@
 eclipse.preferences.version=1
+encoding//src/controllers/hop_dong_controller.java=UTF-8
+encoding//src/controllers/xe_controller.java=UTF-8
 encoding//src/models/bai_xe.java=UTF-8
 encoding//src/models/configs.java=UTF-8
 encoding//src/models/hop_dong.java=UTF-8
 encoding//src/models/xe.java=UTF-8
 encoding//src/models/xe_thue_theo_ngay.java=UTF-8
 encoding//src/models/xe_thue_theo_thang.java=UTF-8
+encoding//src/view/Menu.java=UTF-8
 encoding//src/view/dangNhap.java=UTF-8
 encoding//src/view/sua_xoaHopDong.java=UTF-8
 encoding//src/view/themHopDong.java=UTF-8

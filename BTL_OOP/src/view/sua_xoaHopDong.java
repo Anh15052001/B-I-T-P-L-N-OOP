@@ -114,11 +114,14 @@ public class sua_xoaHopDong {
 
 		JButton btnTimKiemHopDong = new JButton("T\u00ECm ki\u1EBFm");
 		btnTimKiemHopDong.addMouseListener(new MouseAdapter() {
+			// tìm kiếm hợp đồng theo truy vấn đã nhập
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String maHopDong = textMaHopDong.getText();
+				// biến check xem có tìm thấy hợp đồng không
 				boolean check = false;
 				if (!maHopDong.isEmpty()) {
+					// tìm kiếm hợp đồng thuê theo ngày
 					if (radioTheoNgay.isSelected()) {
 						for (int i = 0; i < themHopDong.hopDong.hop_dong_theo_ngay.size(); i++) {
 
@@ -142,8 +145,9 @@ public class sua_xoaHopDong {
 							}
 						}
 						if(check == false) {
+							
 							panelThongTinHopDong.setVisible(false);
-							JOptionPane.showMessageDialog(null,"Đã có lỗi xảy ra!");
+							JOptionPane.showMessageDialog(null,"Không tìm thấy hợp đồng nào phù hợp !");
 						}
 						
 					} else {
@@ -168,13 +172,15 @@ public class sua_xoaHopDong {
 								break;
 							}
 						}
+						// nếu không tìm thấy hợp đồng đưa ra thông báo
 						if(check == false) {
 							panelThongTinHopDong.setVisible(false);
-							JOptionPane.showMessageDialog(null,"Đã có lỗi xảy ra!");
+							JOptionPane.showMessageDialog(null,"Không tìm thấy hợp đồng nào phù hợp !");
 						}
 						
 					}
 				} else {
+					// nếu không có dữ liệu nhập vào đưa ra thông báo
 					panelThongTinHopDong.setVisible(false);
 					JOptionPane.showMessageDialog(null, "Đã có lỗi xảy ra!");
 				}
@@ -241,14 +247,15 @@ public class sua_xoaHopDong {
 		JButton btnSuaHopDong = new JButton("Sửa hợp đồng");
 		btnSuaHopDong.addMouseListener(new MouseAdapter() {
 			@Override
+			// nút để sửa hợp đồng đã được tìm kiếm
 			public void mouseClicked(MouseEvent e) {
-
+				// lấy dữ liệu đã được nhập
 				String thoiGian = textThoiGian.getText();
 				String tenNguoiThue = textTenNguoiThue.getText();
 				String canCuocCongDan = textCanCuocCongDan.getText();
 				String nguoiChoThue = textTenNguoiChoThue.getText();
 				// get data from comboBox
-
+				// xét điều kiện dữ liệu
 				if ( thoiGian.isEmpty() || tenNguoiThue.isEmpty() || canCuocCongDan.isEmpty()
 						|| nguoiChoThue.isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Đã có lỗi xảy ra!");
@@ -260,10 +267,10 @@ public class sua_xoaHopDong {
 						// TODO: handle exception
 						JOptionPane.showMessageDialog(null, "Đã có lỗi xảy ra!");
 					}
-
+					// cập nhật hợp đồng đã sửa theo ngày
 					if (radioTheoNgay.isSelected()) {
 //						System.out.println(loaiXe);
-
+						
 						for (int i = 0; i < themHopDong.hopDong.hop_dong_theo_ngay.size(); i++) {
 
 							if (themHopDong.hopDong.hop_dong_theo_ngay.get(i).getMahopdong()
@@ -293,7 +300,7 @@ public class sua_xoaHopDong {
 							Menu.displayMenu();
 						}
 					} else {
-
+						// cập nhật hợp đồng đã sửa theo tháng
 						for (int i = 0; i < themHopDong.hopDong.hop_dong_theo_thang.size(); i++) {
 							if (themHopDong.hopDong.hop_dong_theo_thang.get(i).getMahopdong()
 									.equals(textMaHopDong.getText())) {
@@ -340,6 +347,7 @@ public class sua_xoaHopDong {
 		JButton btnXoaHopDong = new JButton("Xóa hợp đồng");
 		btnXoaHopDong.addMouseListener(new MouseAdapter() {
 			@Override
+			// nút dùng để xóa hợp đồng
 			public void mouseClicked(MouseEvent e) {
 				String maHopDong = textMaHopDong.getText();
 				boolean check = false;

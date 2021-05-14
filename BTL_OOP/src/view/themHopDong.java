@@ -177,9 +177,10 @@ public class themHopDong {
 		
 		btnThemHopDong = new JButton("Th\u00EAm h\u1EE3p \u0111\u1ED3ng");
 		btnThemHopDong.addMouseListener(new MouseAdapter() {
+			// nút để thêm hợp đồng vào danh sách
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				// lấy dữ liệu đã được nhập
 				String thoiGian = textThoiGian.getText();
 				String maHopDong = textMaHopDong.getText();
 				String tenNguoiThue = textTenNguoiChoThue.getText();
@@ -187,7 +188,7 @@ public class themHopDong {
 				String nguoiChoThue = textNguoiChoThue.getText();
 				// get data from comboBox
 				int index = comboBoxLoaiXe.getSelectedIndex();
-				
+				// kiểm tra điều kiện dữ liệu
 				if(index <= 0 || maHopDong.isEmpty() || thoiGian.isEmpty() || tenNguoiThue.isEmpty() || canCuocCongDan.isEmpty() || nguoiChoThue.isEmpty())
 				{
 					JOptionPane.showMessageDialog(null,"Đã có lỗi xảy ra!");
